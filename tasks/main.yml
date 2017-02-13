@@ -15,5 +15,5 @@
 
 - name: Setup auto-renewal of certificate with Certbot
   become: true
-  command: echo TODO
+  cron: name="Renew certificate" minute=22 hour=5 job="letsencrypt renew --agree-tos --email {{ cert_email_address }}"
 
