@@ -11,7 +11,7 @@
 
 - name: Provision certificate with Certbot
   become: true
-  command: "letsencrypt --standalone certonly --agree-tos --email {{ cert_email_address }} -d {{ domain_name }}"
+  command: "letsencrypt -n --keep-until-expiring --standalone certonly --agree-tos --email {{ cert_email_address }} -d {{ domain_name }}"
 
 - name: Setup auto-renewal of certificate with Certbot
   become: true
